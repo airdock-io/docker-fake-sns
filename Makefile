@@ -27,4 +27,4 @@ debug:
 	docker run -t -i $(NAME):$(VERSION) /bin/bash -l
 
 run:
-	@echo "IPAddress =" $$(docker inspect --format '{{.NetworkSettings.IPAddress}}' $$(docker run -d -p 4568:4568--name fake-sns $(NAME):$(VERSION)))
+	@echo "IPAddress =" $$(docker inspect --format '{{.NetworkSettings.IPAddress}}' $$(docker run -d -p 9292:9292--name fake-sns $(NAME):$(VERSION)))
