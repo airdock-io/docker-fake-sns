@@ -1,4 +1,4 @@
-# Fake SNS
+# Fake SNS [![](https://badge.imagelayers.io/airdock/fake-sns:latest.svg)](https://imagelayers.io/?images=airdock/fake-sns:latest 'Get your own badge on imagelayers.io')
 
 Docker Image for [Fake SNS](https://github.com/yourkarma/fake_sns) based on airdock/base:latest
 
