@@ -1,18 +1,15 @@
-# Fake SNS [![](https://badge.imagelayers.io/airdock/fake-sns:latest.svg)](https://imagelayers.io/?images=airdock/fake-sns:latest 'Get your own badge on imagelayers.io')
+# Fake SNS [![](https://images.microbadger.com/badges/image/airdock/fake-sns:latest.svg)](https://microbadger.com/images/airdock/fake-sns:latest "Get your own image badge on microbadger.com")
 
-Docker Image for [Fake SNS](https://github.com/yourkarma/fake_sns) based on airdock/base:latest
+Docker Image for [Fake SNS](https://github.com/yourkarma/fake_sns) based on airdock/rvm:latest
 
 
 Purpose of this image is:
 
 - install [Fake SNS](https://github.com/yourkarma/fake_sns)
-- based on airdock/oracle-jdk:latest (debian)
+- based on [airdock/rvm:latest](https://github.com/airdock-io/docker-rvm)
 
 
 > Name: airdock/fake-sqs
-
-***Dependencies***: airdock/base:latest
-
 
 # Usage
 
@@ -29,8 +26,10 @@ Read https://github.com/yourkarma/fake_sns for more information about 'fake sqs'
 
 # Change Log
 
-## Tag latest
+## 2012/12/21
+- update to use airdock/rvm as base image
 
+## before
 - add Fake SNS
 - install ruby-full
 - MIT license
