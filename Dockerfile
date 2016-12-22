@@ -7,11 +7,15 @@
 FROM airdock/rvm:latest
 MAINTAINER Jerome Guibert <jguibert@gmail.com>
 
-RUN  mkdir -p /opt/fake-sns && cd /opt/fake-sns && \
-    mkdir -p /srv/fake-sns && \
-    rvm ruby-2.3 do gem install fake_sns --no-ri --no-rdoc && \
-    /root/post-install
+USER ruby
+
+RUN mkdir -p /srv/ruby/fake-sns && cd /srv/ruby/fake-sns && \
+  rvm ruby-2.3 do gem install fake_sns --no-ri --no-rdoc
+
+USER root
 
 EXPOSE 9292
 
-CMD ["rvm", "ruby-2.3", "do", "fake_sns", "--database", "/srv/fake-sns/database.yml", "-p", "9292"]
+VOLUME ["/srv/ruby/fake-sns"]
+
+CMD ["tini", "-g", "--", "gosu", "ruby:ruby", "rvm", "ruby-2.3", "do", "fake_sns", "--database", "/srv/ruby/fake-sns/database.yml", "-p", "9292"]

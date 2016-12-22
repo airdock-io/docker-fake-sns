@@ -6,6 +6,7 @@ Docker Image for [Fake SNS](https://github.com/yourkarma/fake_sns) based on aird
 Purpose of this image is:
 
 - install [Fake SNS](https://github.com/yourkarma/fake_sns)
+- run with ruby:ruby user account
 - based on [airdock/rvm:latest](https://github.com/airdock-io/docker-rvm)
 
 
@@ -15,19 +16,26 @@ Purpose of this image is:
 
 You should have already install [Docker](https://www.docker.com/).
 
-Execute:
 
-		docker run -d -p 9292:9292 --name node airdock/fake-sns
+Launch as service:
 
-Note:
-- Data file are localized under /srv/fake-sns
+```
+		docker run -d -p 9292:9292 --name fake-sqs airdock/fake-sns
+```
+This instance listen on port 4468 and persist data under /srv/ruby/fake-sns
+
+You could mount a volume on /srv/ruby/fake-sns in order to store/load data.
+```
+   docker run -v /some/fake/sns:/srv/ruby/fake-sns:rw  -d -p 9292:9292 --name fake-sqs airdock/fake-sns
+```
 
 Read https://github.com/yourkarma/fake_sns for more information about 'fake sqs'.
 
 # Change Log
 
-## 2012/12/21
-- update to use airdock/rvm as base image
+## current
+- install fake SNS with ruby user
+- user airdock/rvm
 
 ## before
 - add Fake SNS
