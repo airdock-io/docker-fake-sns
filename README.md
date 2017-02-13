@@ -20,13 +20,13 @@ You should have already install [Docker](https://www.docker.com/).
 Launch as service:
 
 ```
-		docker run -d -p 9292:9292 --name fake-sqs airdock/fake-sns
+		docker run -d -p 9292:9292 --name fake-sns airdock/fake-sns
 ```
 This instance listen on port 4468 and persist data under /srv/ruby/fake-sns
 
 You could mount a volume on /srv/ruby/fake-sns in order to store/load data.
 ```
-   docker run -v /some/fake/sns:/srv/ruby/fake-sns:rw  -d -p 9292:9292 --name fake-sqs airdock/fake-sns
+   docker run -v /some/fake/sns:/srv/ruby/fake-sns:rw  -d -p 9292:9292 --name fake-sns airdock/fake-sns
 ```
 
 Read https://github.com/yourkarma/fake_sns for more information about 'fake sqs'.
