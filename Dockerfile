@@ -5,7 +5,7 @@
 # SOURCE:         https://github.com/airdock-io/docker-fake-sns
 
 FROM airdock/rvm:latest
-MAINTAINER Jerome Guibert <jguibert@gmail.com>
+LABEL maintainer Jerome Guibert <jguibert@gmail.com>
 
 USER ruby
 
